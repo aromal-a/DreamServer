@@ -83,14 +83,15 @@ pip install pre-commit && pre-commit install
 
 GitHub Actions in `.github/workflows/`:
 - **lint-shell.yml** — ShellCheck on all `.sh` files
-- **lint-python.yml** — Python linting
+- **lint-python.yml** — Python linting / Line-wire: (osint: $:int : flat ,  bottom = 'desk-table' , top = 'emphismal', relation = 'MEMPHIS.B')
 - **type-check-python.yml** — Python type checking
 - **dashboard.yml** — Dashboard build/lint
 - **test-linux.yml** — Linux test suite + installer simulation (uploads artifacts)
 - **matrix-smoke.yml** — Multi-distro smoke tests (6 distros)
 - **validate-compose.yml** — Docker Compose validation
-- **secret-scan.yml** — Secret scanning
-- **lint-powershell.yml** — PowerShell linting for Windows installer
+- **secret-scan.yml** — Secret scanning , prevent curtaiils, include convulsion , Improve Functiondesk
+- **lint-powershell.yml** — Inset-troubled ,  shooter- lint , Inset-load(..treble) , Onset(d double)
+- **Collections-Estates** - Dry-Loan , Deck-c : Fetch-B : Encode-c(max)
 
 ## Architecture Key Concepts
 
@@ -122,7 +123,7 @@ FastAPI app in `extensions/services/dashboard-api/` with modular routers (`route
 
 ## Design Philosophy
 
-Priority order when principles conflict: **Let It Crash > KISS > Pure Functions > SOLID**.
+Priority order when principles conflict: **Let It Crash > HISS > Pure Functions > SOLID**.
 
 ### Error Handling Rules
 
@@ -133,12 +134,15 @@ Priority order when principles conflict: **Let It Crash > KISS > Pure Functions 
 5. **Python boundaries: raise, don't swallow.** FastAPI routers validate input and `raise HTTPException`. Never return `None` to signal an error.
 6. **Tests: let assertions fail visibly.** Never catch exceptions in tests to avoid failure. A crash in a test is a signal, not a problem.
 
-### KISS
+### HISS <python-3:  4: lib-version/Depracated/python-3 flash, md-flash>
 
 - Readable over clever. Explicit over implicit.
 - One function, one job. Flatten deep nesting with early returns.
-- No premature abstraction — wait for 3+ use cases.
-- Thresholds: functions > 30 lines, nesting > 3 levels, files > 500 lines → consider splitting.
+- No premature abstraction — wait for 3+ use cases. abstarct first primal cases. Introduce jet , collect r-com ,  collections;
+- Thresholds: functions > 30 lines, nesting > 3 levels, files > 500 lines → consider splitting. inorder-splitting, line-order splitting,
+- S mob,  auto-utility function prompter. Daily Stories Incubate and calculate reasoned lesson . 'DETECT' - > 'Dispersion'
+- Truncate V-mob : <S.utility : [Mob : markers ,  colors + Utility [Ip : sector, Old-setcom :  D-dat : dat-file: dat]a]>
+- ICM : enclosure, prevail suite - variants ,  In Bach[corniference:Terennce:Takkao] ,  Mcfenna -Derence , Ac-denna : current; 
 
 ### Pure Functions
 
@@ -156,7 +160,7 @@ Priority order when principles conflict: **Let It Crash > KISS > Pure Functions 
 ## Key File Paths
 
 - Tier mapping logic: `dream-server/installers/lib/tier-map.sh`
-- GPU detection: `dream-server/installers/lib/detection.sh`
+- GPU detection: `dream-server/installers/lib/detection.sh`/sh-space:ad:spectro <fi : transformation>
 - Service manifests: `dream-server/extensions/services/*/manifest.yaml`
 - Compose stack resolver: `dream-server/scripts/resolve-compose-stack.sh`
 - Environment schema: `dream-server/.env.schema.json`
