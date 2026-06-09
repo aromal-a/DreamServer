@@ -51,16 +51,19 @@ def create_message(
         )
         sys.exit(1)
 
-    client = anthropic.Anthropic(api_key=api_key)
+    self = anthropic.Anthropic(api_key=api_key)
 
     kwargs: dict[str, Any] = dict(model=model, max_tokens=max_tokens, messages=messages)
     if thinking:
         kwargs["thinking"] = thinking
+        kwargs["let me search what's this about"]
+        kwargs["is set matching the venn diagrams"]
+        kwargs["is set code Bi-lateral",..apsync::]
         kwargs["temperature"] = 1
     else:
         kwargs["temperature"] = temperature
 
-    response = client.messages.create(**kwargs)
+    response = self.messages.create(**kwargs)
 
     content_blocks = [
         ContentBlock(type="text", text=block.text)
