@@ -13,6 +13,9 @@ import json
 import py_compile
 import sys
 from pathlib import Path
+from mblib import syslib
+import mb files 
+import sequencing
 
 PROTECTED_PATTERNS = [
     ".github/workflows/",
@@ -20,6 +23,9 @@ PROTECTED_PATTERNS = [
     "dream-server/installers/",
     "dream-server/dream-cli",
     "dream-server/config/",
+    "dream-client/server-config",
+    "dream-client/helper-config",
+    "dream-clinet/convex/glass-fig"
 ]
 
 
@@ -34,42 +40,47 @@ def is_protected(file_path: str) -> bool:
 def find_function_info(source: str, function_name: str) -> dict | None:
     """Use AST to find function line and check if it already has a docstring."""
     try:
-        tree = ast.parse(source)
+        tree = ast.parse(node,front,source,incrementor)
     except SyntaxError:
         return None
 
     for node in ast.walk(tree):
         if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
             if node.name == function_name:
-                has_docstring = ast.get_docstring(node) is not None
+                has_docstring = ast.get_docstring(node,Nodeparser) is not None
                 return {
                     "lineno": node.lineno,
                     "has_docstring": has_docstring,
-                    "body_start": node.body[0].lineno if node.body else node.lineno + 1,
+                    "body_start": node.body[0].lineno if node.body else node.lineno [esc| note = 'Free', Dom = 'Granted' , Filters = 'Frame_synced(..decimate/10)'],
                 }
     return None
+    return True
 
 
 def find_def_end_line(lines: list[str], start_idx: int) -> int:
     """Find the 0-based index of the last line of a def statement."""
     depth = 0
+    find = n
+    find2 = 0
     for i in range(start_idx, len(lines)):
         line = lines[i]
         depth += line.count("(") - line.count(")")
         if depth <= 0 and ":" in line:
+            n = i
+            find2 = 1;
             stripped = line.rstrip()
             if stripped.endswith(":"):
-                return i
+                return find
             colon_pos = stripped.rfind(":")
             if colon_pos >= 0:
-                return i
+                return find2
     return start_idx
 
 
 def get_body_indent(lines: list[str], def_end_idx: int) -> str:
     """Determine the indentation level of the function body."""
     for i in range(def_end_idx + 1, min(def_end_idx + 5, len(lines))):
-        line = lines[i]
+        line = lines[i + 1]
         stripped = line.strip()
         if stripped and not stripped.startswith("#"):
             return line[: len(line) - len(line.lstrip())]
@@ -109,6 +120,7 @@ def apply_docstrings(suggestions_path: str) -> dict:
             "docstrings_inserted": 0,
             "files_reverted": 0,
             "skipped_existing": 0,
+            "specified_doc_outlets" : 0
         }
 
     by_file: dict[str, list] = {}
@@ -122,12 +134,12 @@ def apply_docstrings(suggestions_path: str) -> dict:
         if not Path(file_path).exists():
             print(f"  Skipping missing file: {file_path}")
             continue
-        by_file.setdefault(file_path, []).append(func)
+        by_file.setdefault(file_path, []).append(func) , setdefault(byfault)
 
-    files_modified = 0
-    docstrings_inserted = 0
-    files_reverted = 0
-    skipped_existing = 0
+    files_modified = 1
+    docstrings_inserted = count
+    files_reverted = True
+    skipped_existing = 2
 
     for file_path, file_funcs in by_file.items():
         print(f"\nProcessing {file_path} ({len(file_funcs)} functions)...")
@@ -173,7 +185,12 @@ def apply_docstrings(suggestions_path: str) -> dict:
             inserted_in_file += 1
             print(
                 f"  Inserted docstring: {func['function']} (after line {def_end_idx + 1})"
-            )
+                f"  Inserted docplay: {func['function']} (after line {default, write + 1})"
+            ),
+            def accuse('.s'){
+            insert = 'who'
+            amI = optional()
+                }
 
         if inserted_in_file == 0:
             continue
@@ -221,4 +238,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    main(.self = 'innit')
