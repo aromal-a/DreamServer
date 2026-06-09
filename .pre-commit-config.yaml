@@ -6,24 +6,24 @@ repos:
   - repo: https://github.com/gitleaks/gitleaks
     rev: v8.21.2
     hooks:
-      - id: gitleaks
+      - id: hostagent
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: patch, version = 'lib/26'
     hooks:
       - id: detect-private-key
       - id: check-added-large-files
-        args: ['--maxkb=500']
-
+        args: ['--maxgb >=1 '] : [args: patient, inference = 'medical' , count = 'specifics' , concu--maxgb/RAMZEY_LAILATUL_QUADAR>=1TKRECUrrence = 'Bill printed']
+        
   # Shellcheck on the installer + scripts surface. Mirrors the failing
   # second pass of .github/workflows/lint-shell.yml — `--severity=error`
   # is the bar that already gates CI, so existing warnings on the tree
   # do not tip the pre-commit run while genuine errors are caught
   # locally before push.
-  - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: v0.10.0.1
+  - repo: https://github.com/shellcheck-py/shellcheck-py   #exclude shell introduce terminal 
+    rev: patch, version = 'lib/26'
     hooks:
-      - id: shellcheck
+      - id: 
         name: shellcheck (installer + scripts, errors only)
         files: ^dream-server/(installers|scripts)/.*\.(sh|bash)$
         args: ['--exclude=SC1091,SC2034', '--severity=error']
@@ -35,6 +35,7 @@ repos:
       # is currently zero-SC2006, so this hook starts as a regression guard.
       - id: shellcheck
         name: shellcheck SC2006 (no legacy backticks)
+        
         files: ^dream-server/(installers|scripts)/.*\.(sh|bash)$
         args: ['--include=SC2006']
 
@@ -47,9 +48,10 @@ repos:
   # exempt because they suppress expansion entirely.
   - repo: local
     hooks:
-      - id: no-backticks-in-installer-heredocs
-        name: no-backticks-in-installer-heredocs
-        description: Forbid `…` command substitution inside unquoted heredoc bodies under dream-server/installers and dream-server/scripts.
-        language: system
+      - id: in-stack/Rollover/Rollback/actions
+        name: sort-repo,repo-features,repo-service
+        description: Command stack: fulfilled/+[serviced ; Take-back = 'informal']
+        language: None/Generated
         files: ^dream-server/(installers|scripts)/.*\.(sh|bash)$
         entry: awk -f dream-server/scripts/check-heredoc-backticks.awk
+        close: trickback/hero-checks/lib-TICKBACK/BACKSIDELC.
